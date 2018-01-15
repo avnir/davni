@@ -15,6 +15,7 @@ A few quick things to note.
 
 3. I'll also show you the right way. What you're looking for is a thing called data volumes. Read more about them [here](https://docs.docker.com/engine/admin/volumes/volumes/#create-and-manage-volumes). The TL;DR is that docker creates a "container" and it's soul purpose in life is to store data that multiple containers can read from. So, you can create a volume mounted folder, lets for our example use `/pdfs` in both of our services, so anytime data gets written into `/pdfs` all the containers that have that volume can see it as if it were a regular directory. 
 
+
 # First Example
 
 Probably the easiest. I think you already know how to shell out in go lang, if not, it looks like this:
@@ -107,3 +108,8 @@ First, write your golang application inside a container. When you run the contai
 
 
 Anywho, EZPZ. Hope this helps :)
+
+
+*** NOTE ***
+
+When I say the "right"/"wrong" way, I don't mean the volume mounting of the docker binary or the docker socket, but how you go about mounting the volume(you can either use data volumes, the "right" way, or you can just volume mount a folder on run, the "wrong" way).
