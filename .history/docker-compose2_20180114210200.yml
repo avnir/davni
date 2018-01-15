@@ -1,0 +1,10 @@
+version: "3.3"
+
+services:
+  golangservice:
+    build:
+      context: .
+      dockerfile: Dockerfile.golang-service
+    entrypoint: davni
+    volumes:
+      - /tmp/pdfs:/pdfs

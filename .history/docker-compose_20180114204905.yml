@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+  htmltopdf:
+    build:
+      context: .
+      dockerfile: Dockerfile.htmltopdf
+    volumes:
+      - pdfs:/pdfs
+
+  golangservice:
+    image: madnight/docker-alpine-wkhtmltopdf
+    volumes:
+      - pdfs:/pdfs
+
+volumes:
+  pdfs:

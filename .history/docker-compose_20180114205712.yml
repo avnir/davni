@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+  htmltopdf:
+    image: madnight/docker-alpine-wkhtmltopdf
+    entrypoint: wkhtmltopdf
+    command: ["google.com", "tester.pdf"]
+    volumes:
+      - pdfs:/pdfsj
+    working_dir: /pdfs
+
+  golangservice:
+    build:
+      context: .
+      dockerfile: Dockerfile.golang-service
+    volumes:
+      - pdfs:/pdfs
+    working_dir: /code
+    entrypoint: "./entrypoint.sh"
+
+volumes:
+  pdfs:

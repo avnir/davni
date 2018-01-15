@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+   golangservice:
+    build:
+      context: .
+      dockerfile: Dockerfile.golang-service
+    volumes:
+      - pdfs:/pdfs
+    working_dir: /pdfs
+
+volumes:
+  pdfs:

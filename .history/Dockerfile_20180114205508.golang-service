@@ -1,0 +1,7 @@
+FROM golang
+COPY . /go/src/github.com/kcmerrill/davni
+# lazy, copying it in both places
+COPY . /code
+WORKDIR /go/src/github.com/kcmerrill/davni
+RUN go build -o /usr/local/bin/davni
+ENTRYPOINT ["davni"]

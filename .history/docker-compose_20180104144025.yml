@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  htmltopdf:
+    context: .
+    dockerfile: Dockerfile.htmltopdf
+
+  golangservice:
+    context: .
+    dockerfile: Dockerfile.golang-service
+
+volumes:
+  pdfs:
