@@ -8,7 +8,7 @@ Anywho ... lets get started.
 
 A few quick things to note. 
 
-1. Something like this I'd probably create a microservice to serve up the pdfs. Basically, a website you can curl that will generate the contents and then let you download it(even if it is programatically). I can show you how I'd do that if you're interested, but basically I'd use [Crush](https://github.com/kcmerrill/crush) or some similiar [FAAS](https://github.com/search?utf8=%E2%9C%93&q=faas&type=)
+1. Something like this I'd probably create a microservice to serve up the pdfs. Basically, a website you can curl that will generate the contents and then let you download it(even if it is programatically). I can show you how I'd do that if you're interested, but basically I'd use [Genie](https://github.com/kcmerrill/genie) or some similiar [FAAS](https://github.com/search?utf8=%E2%9C%93&q=faas&type=)
 
 
 2. I'm going to show you the "wrong" way first, only so you can see something I found really cool with docker. Basically, you mount the docker binary from your host machine inside a container(that doesn't have docker installed), along with it's socket. This lets you play with docker inside a container, without actually installing anything inside the container. It also is neat because whenever you exec `docker` it's running on the `host` machine, and not in the container. I'm on a mac, but this should work for all `*nix` env's. 
